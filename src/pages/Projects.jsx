@@ -1,0 +1,45 @@
+import { useEffect } from "react";
+import { projects } from "../data/siteContent.js";
+
+export default function Projects() {
+  useEffect(() => {
+    document.title = "Projects | Jude Anandaraj";
+  }, []);
+
+  return (
+    <div className="page">
+      <header className="page-intro">
+        <p className="kicker">Projects</p>
+        <h1>Selected work</h1>
+        <p className="lede">Three projects with my role and the outcome of each.</p>
+      </header>
+      <div className="project-list">
+        {projects.map((project) => (
+          <article className="project-card" key={project.id}>
+            <img src={project.image} alt={project.imageAlt} />
+            <div className="project-copy">
+              <p className="kicker">{project.kind}</p>
+              <h2>{project.title}</h2>
+              <ul className="skill-list">
+                {project.tools.map((tool) => (
+                  <li key={tool}>{tool}</li>
+                ))}
+              </ul>
+              <h3>My role</h3>
+              <p>{project.role}</p>
+              <h3>Outcome</h3>
+              <p>{project.outcome}</p>
+              {project.href && (
+                <p>
+                  <a href={project.href} target="_blank" rel="noreferrer">
+                    View live
+                  </a>
+                </p>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
