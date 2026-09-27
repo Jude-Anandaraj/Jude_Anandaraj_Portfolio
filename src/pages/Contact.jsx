@@ -28,7 +28,8 @@ function validateContactForm(formValues) {
     fieldErrors.lastName = "Enter a last name.";
   }
   if (digitCount < 10) {
-    fieldErrors.contactNumber = "Enter a contact number with at least 10 digits.";
+    fieldErrors.contactNumber =
+      "Enter a contact number with at least 10 digits.";
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailAddress)) {
     fieldErrors.emailAddress = "Enter an email address like name@example.com.";
@@ -76,7 +77,10 @@ export default function Contact() {
       submittedAt: new Date().toISOString(),
     };
 
-    sessionStorage.setItem(receiptStorageKey, JSON.stringify(contactSubmission));
+    sessionStorage.setItem(
+      receiptStorageKey,
+      JSON.stringify(contactSubmission),
+    );
     navigate("/", { state: { contactSubmission } });
   }
 
@@ -86,8 +90,10 @@ export default function Contact() {
         <p className="kicker">Contact me</p>
         <h1>Contact me</h1>
         <p className="lede">
-          Phone or email on the left. The form captures your details and returns you to the home
-          page.
+          <p className="lede">
+            Interested in working together? Send me a message to discuss
+            projects, opportunities, or collaborations.
+          </p>
         </p>
       </header>
 
@@ -127,7 +133,9 @@ export default function Contact() {
                   value={formValues.firstName}
                   onChange={updateField}
                   aria-invalid={Boolean(fieldErrors.firstName)}
-                  aria-describedby={fieldErrors.firstName ? "firstName-error" : undefined}
+                  aria-describedby={
+                    fieldErrors.firstName ? "firstName-error" : undefined
+                  }
                 />
               </label>
               {fieldErrors.firstName && (
@@ -147,7 +155,9 @@ export default function Contact() {
                   value={formValues.lastName}
                   onChange={updateField}
                   aria-invalid={Boolean(fieldErrors.lastName)}
-                  aria-describedby={fieldErrors.lastName ? "lastName-error" : undefined}
+                  aria-describedby={
+                    fieldErrors.lastName ? "lastName-error" : undefined
+                  }
                 />
               </label>
               {fieldErrors.lastName && (
@@ -169,7 +179,9 @@ export default function Contact() {
                 value={formValues.contactNumber}
                 onChange={updateField}
                 aria-invalid={Boolean(fieldErrors.contactNumber)}
-                aria-describedby={fieldErrors.contactNumber ? "contactNumber-error" : undefined}
+                aria-describedby={
+                  fieldErrors.contactNumber ? "contactNumber-error" : undefined
+                }
               />
             </label>
             {fieldErrors.contactNumber && (
@@ -190,7 +202,9 @@ export default function Contact() {
                 value={formValues.emailAddress}
                 onChange={updateField}
                 aria-invalid={Boolean(fieldErrors.emailAddress)}
-                aria-describedby={fieldErrors.emailAddress ? "emailAddress-error" : undefined}
+                aria-describedby={
+                  fieldErrors.emailAddress ? "emailAddress-error" : undefined
+                }
               />
             </label>
             {fieldErrors.emailAddress && (
@@ -210,7 +224,9 @@ export default function Contact() {
                 value={formValues.message}
                 onChange={updateField}
                 aria-invalid={Boolean(fieldErrors.message)}
-                aria-describedby={fieldErrors.message ? "message-error" : undefined}
+                aria-describedby={
+                  fieldErrors.message ? "message-error" : undefined
+                }
               />
             </label>
             {fieldErrors.message && (
