@@ -12,7 +12,7 @@ export const profile = {
   phoneHref: "tel:+14372491217",
   email: "gerryn.017@gmail.com",
   emailHref: "mailto:gerryn.017@gmail.com",
-  resumePath: "/Jude_Anandaraj_Resume.pdf",
+  resumePath: "/resume/Jude_Anandaraj_Resume.pdf",
   livePortfolio: "https://jude-anandaraj.github.io/",
 };
 
