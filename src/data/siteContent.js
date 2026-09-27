@@ -98,7 +98,7 @@ export const education = [
 export const services = [
   {
     id: "programming",
-    title: "General programming",
+    title: "programming",
     image: "/images/service-programming.svg",
     imageAlt: "Abstract lines of code on a dark panel.",
     summary: "C#, Java, and Python. I break a task into pieces, write the code, and debug until the behaviour matches.",
