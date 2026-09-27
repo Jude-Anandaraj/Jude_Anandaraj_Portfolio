@@ -10,7 +10,7 @@ export default function Projects() {
     <div className="page">
       <header className="page-intro">
         <p className="kicker">Projects</p>
-        <h1>Selected work</h1>
+        <h1>My Projects</h1>
         <p className="lede">Three projects with my role and the outcome of each.</p>
       </header>
       <div className="project-list">
