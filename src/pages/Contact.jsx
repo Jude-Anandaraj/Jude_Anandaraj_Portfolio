@@ -12,6 +12,13 @@ const emptyForm = {
 
 const receiptStorageKey = "contactSubmission";
 
+/*
+ * Checks every field and returns an object of error messages.
+ * An empty object means the form is valid.
+ * Rules: names are required, the phone number needs at least 10 digits,
+ * the email must look like name@example.com, and the message needs
+ * at least 8 characters.
+ */
 function validateContactForm(formValues) {
   const fieldErrors = {};
   const firstName = formValues.firstName.trim();
@@ -19,6 +26,7 @@ function validateContactForm(formValues) {
   const contactNumber = formValues.contactNumber.trim();
   const emailAddress = formValues.emailAddress.trim();
   const message = formValues.message.trim();
+  // Count only the digits, so "437-249-1217" and "(437) 249 1217" both pass.
   const digitCount = contactNumber.replace(/\D/g, "").length;
 
   if (!firstName) {
@@ -50,6 +58,8 @@ export default function Contact() {
     document.title = "Contact Me | Jude Anandaraj";
   }, []);
 
+  // One change handler for every field. It uses the input's name
+  // to know which value in formValues to update.
   function updateField(event) {
     const fieldName = event.target.name;
     const fieldValue = event.target.value;
@@ -90,8 +100,8 @@ export default function Contact() {
         <p className="kicker">Contact me</p>
         <h1>Contact me</h1>
         <p className="lede">
-          Interested in working together? Send me a message to discuss projects,
-          opportunities, or collaborations.
+          Interested in working together? Send me a message to discuss
+          projects, opportunities, or collaborations.
         </p>
       </header>
 

@@ -1,7 +1,12 @@
 import { useEffect } from "react";
 import { aboutParagraph, profile, skills } from "../data/siteContent.js";
 
+/*
+ * About Me page: my name, photo, a short paragraph about me,
+ * my skills, and links to my resume and earlier portfolio.
+ */
 export default function About() {
+  // Set the browser tab title for this page.
   useEffect(() => {
     document.title = "About Me | Jude Anandaraj";
   }, []);
@@ -20,11 +25,13 @@ export default function About() {
         </figure>
         <div>
           <p className="lede">{aboutParagraph}</p>
+          {/* One tag for each skill in siteContent.js */}
           <ul className="skill-list">
             {skills.map((skill) => (
               <li key={skill}>{skill}</li>
             ))}
           </ul>
+          {/* Both links open in a new tab */}
           <p className="hero-actions">
             <a className="button" href={profile.resumePath} target="_blank" rel="noreferrer">
               Resume (PDF)

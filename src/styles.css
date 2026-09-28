@@ -1,3 +1,4 @@
+/* Colors, fonts, and shadow used across the whole site */
 :root {
   --paper: #101214;
   --paper-raised: #181b21;
@@ -14,6 +15,7 @@
   --sans: "Outfit", "Segoe UI", sans-serif;
 }
 
+/* Base styles for the page, images, links, and headings */
 * {
   box-sizing: border-box;
 }
@@ -76,6 +78,7 @@ p {
   margin: 0 0 1em;
 }
 
+/* Hidden link that appears when keyboard users press Tab */
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -90,6 +93,7 @@ p {
   top: 0.6rem;
 }
 
+/* Header, logo, and navigation bar */
 .site-shell {
   min-height: 100vh;
   display: flex;
@@ -169,6 +173,7 @@ p {
   color: var(--copper-deep);
 }
 
+/* Main content area and footer */
 .site-main {
   flex: 1;
   width: min(1080px, calc(100% - 10vw));
@@ -190,6 +195,7 @@ p {
   color: #f3efe6;
 }
 
+/* Page headings and small labels above them */
 .page-intro {
   max-width: 40rem;
   margin-bottom: 2rem;
@@ -213,6 +219,7 @@ p {
   color: var(--ink-soft);
 }
 
+/* Home page: welcome section */
 .hero {
   padding-bottom: 1rem;
 }
@@ -231,6 +238,7 @@ p {
   margin-top: 1.4rem;
 }
 
+/* Buttons */
 .button {
   display: inline-block;
   border: 0;
@@ -263,6 +271,7 @@ p {
   font-weight: 600;
 }
 
+/* Home page: mission statement */
 .mission {
   margin: 2.5rem 0;
   padding: 1.8rem 1.6rem;
@@ -286,6 +295,7 @@ p {
   line-height: 1.25;
 }
 
+/* Cards: page links on Home, services, projects, contact panel, and receipt */
 .home-routes,
 .service-grid {
   display: grid;
@@ -338,6 +348,7 @@ p {
   color: var(--ink-soft);
 }
 
+/* Two-column layouts on About and Contact, then Projects, Services, and Education */
 .about-layout,
 .contact-layout {
   display: grid;
@@ -460,6 +471,7 @@ p {
   margin-top: -0.3rem;
 }
 
+/* Contact page: contact details panel */
 .contact-panel {
   padding: 1.3rem 1.3rem 1.5rem;
   background: #14171c;
@@ -490,6 +502,7 @@ p {
   margin: 0.15rem 0 0;
 }
 
+/* Contact page: form and error messages */
 .contact-form {
   display: grid;
   gap: 0.9rem;
@@ -539,6 +552,7 @@ textarea[aria-invalid="true"] {
   font-size: 0.92rem;
 }
 
+/* Home page: message shown after the contact form is sent */
 .receipt {
   display: grid;
   gap: 0.8rem;
@@ -571,6 +585,7 @@ textarea[aria-invalid="true"] {
   margin: 0;
 }
 
+/* Small screens: one column and a Menu button for the navigation */
 @media (max-width: 800px) {
   .nav-toggle {
     display: inline-block;

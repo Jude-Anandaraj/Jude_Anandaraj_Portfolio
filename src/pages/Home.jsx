@@ -4,6 +4,7 @@ import { missionStatement, profile } from "../data/siteContent.js";
 
 const receiptStorageKey = "contactSubmission";
 
+// Read the last contact form message saved in this browser tab, if any.
 function readStoredReceipt() {
   const storedReceipt = sessionStorage.getItem(receiptStorageKey);
   if (!storedReceipt) {
@@ -38,6 +39,7 @@ export default function Home() {
   function dismissReceipt() {
     sessionStorage.removeItem(receiptStorageKey);
     setContactReceipt(null);
+    // Clear the router state too, or a page refresh brings the receipt back.
     navigate(location.pathname, { replace: true, state: null });
   }
 

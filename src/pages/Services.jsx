@@ -2,7 +2,12 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { services } from "../data/siteContent.js";
 
+/*
+ * Services page: a grid of the services I offer, each with an image
+ * and a short summary, then a link to the contact form.
+ */
 export default function Services() {
+  // Set the browser tab title for this page.
   useEffect(() => {
     document.title = "Services | Jude Anandaraj";
   }, []);

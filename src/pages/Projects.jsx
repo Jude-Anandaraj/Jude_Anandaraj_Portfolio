@@ -1,7 +1,12 @@
 import { useEffect } from "react";
 import { projects } from "../data/siteContent.js";
 
+/*
+ * Projects page: one card for each project in siteContent.js,
+ * with an image, the tools used, my role, and the outcome.
+ */
 export default function Projects() {
+  // Set the browser tab title for this page.
   useEffect(() => {
     document.title = "Projects | Jude Anandaraj";
   }, []);
@@ -29,6 +34,7 @@ export default function Projects() {
               <p>{project.role}</p>
               <h3>Outcome</h3>
               <p>{project.outcome}</p>
+              {/* Only show the link if the project has one */}
               {project.href && (
                 <p>
                   <a href={project.href} target="_blank" rel="noreferrer">

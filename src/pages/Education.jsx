@@ -1,7 +1,12 @@
 import { useEffect } from "react";
 import { education } from "../data/siteContent.js";
 
+/*
+ * Education page: each qualification with its dates, status,
+ * program, school, and courses.
+ */
 export default function Education() {
+  // Set the browser tab title for this page.
   useEffect(() => {
     document.title = "Education | Jude Anandaraj";
   }, []);
@@ -29,6 +34,7 @@ export default function Education() {
                 {item.school}, {item.place}
               </p>
               <p>{item.detail}</p>
+              {/* Only show the courses heading when there are courses to list */}
               {item.courses.length > 0 && (
                 <>
                   <h3>Courses</h3>
