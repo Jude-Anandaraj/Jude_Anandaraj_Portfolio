@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { missionStatement, profile } from "../data/siteContent.js";
 
 const receiptStorageKey = "contactSubmission";
@@ -18,6 +18,7 @@ function readStoredReceipt() {
 
 export default function Home() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [contactReceipt, setContactReceipt] = useState(null);
 
   useEffect(() => {
@@ -37,6 +38,7 @@ export default function Home() {
   function dismissReceipt() {
     sessionStorage.removeItem(receiptStorageKey);
     setContactReceipt(null);
+    navigate(location.pathname, { replace: true, state: null });
   }
 
   return (

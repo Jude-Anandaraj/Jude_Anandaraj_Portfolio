@@ -1,31 +1,60 @@
-# Assignment 1 — React Portfolio
+# Jude Anandaraj - Portfolio
 
-Game programmer portfolio for Jude Anandaraj (COMP229 Web Application Development).
+This is my portfolio website for Assignment 1 in COMP229 (Web Application Development). I made it with React and Vite.
 
-The site has six pages: Home, About, Projects, Education, Services, and Contact. The navigation bar includes a custom JA hexagon logo. The contact form checks the fields, stores the message in the browser, and returns to the home page with that information.
+Live site: https://jude-anandaraj-portfolio.netlify.app
 
-Copy is written as a junior game developer: Unity, C#, Blender, and the Game Programming diploma. About links to the resume PDF and to the live site: https://jude-anandaraj.github.io/
+I am a Game Programming student at Centennial College, so the portfolio is about my game work in Unity, C# and Blender.
 
-This copy is local only. It has not been pushed to GitHub and it has not been deployed.
+## Pages
 
-## Run it
+My site has 6 pages:
+
+- Home - a welcome section, my mission statement and links to the other pages
+- About Me - my photo, a short intro about me, my skills and a link to my resume
+- Projects - three of my projects (No Way Out, 3D game assets and Dark Protocol)
+- Education - my Game Programming diploma and co-op preparation
+- Services - what I can do (programming, web development, game development and 3D assets)
+- Contact - my contact details and a contact form
+
+I also made my own logo for the navigation bar. It is a hexagon with my initials (JA).
+
+When the contact form is submitted, it checks that all the fields are filled in correctly and then goes back to the home page and shows the message that was entered. It does not actually send an email.
+
+## How to run it
+
+You need Node.js installed (version 20.19 or newer).
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the address Vite prints (usually http://localhost:5173).
+Then open http://localhost:5173 in the browser.
 
-## Pages
+To make a production build:
 
-| Path | What it shows |
-| --- | --- |
-| `/` | Welcome, mission statement, links to the other pages, and a contact receipt after the form is sent |
-| `/about` | Legal name, portrait, short bio, resume PDF, live portfolio |
-| `/projects` | No Way Out, 3D assets, Dark Protocol |
-| `/education` | Game Programming diploma and co-op preparation |
-| `/services` | Programming, web, games, and 3D assets |
-| `/contact` | Contact panel and the message form |
+```bash
+npm run build
+```
 
-The resume file is `public/Jude_Anandaraj_Resume.pdf`.
+## Deployment
+
+I pushed the project to GitHub and connected the repo to Netlify. Netlify builds it with `npm run build` and publishes the `dist` folder.
+
+## Files
+
+- `src/App.jsx` - the routes for all the pages
+- `src/components/` - the layout (header, navigation and footer) and my logo
+- `src/pages/` - one file for each page
+- `src/data/siteContent.js` - all the text for the site, like my projects, education and contact details
+- `src/styles.css` - the styles
+- `public/images/` - the images used on the site
+- `public/resume/` - my resume PDF
+
+## Built with
+
+- React
+- React Router
+- Vite
+- CSS

@@ -90,10 +90,8 @@ export default function Contact() {
         <p className="kicker">Contact me</p>
         <h1>Contact me</h1>
         <p className="lede">
-          <p className="lede">
-            Interested in working together? Send me a message to discuss
-            projects, opportunities, or collaborations.
-          </p>
+          Interested in working together? Send me a message to discuss projects,
+          opportunities, or collaborations.
         </p>
       </header>
 
