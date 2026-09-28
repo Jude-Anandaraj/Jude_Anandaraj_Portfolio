@@ -15,7 +15,7 @@ export default function About() {
 
       <div className="about-layout">
         <figure className="portrait">
-          <img src="/download.png" alt="Portrait of Jude Anandaraj" />
+          <img src="/images/jude.png" alt="Portrait of Jude Anandaraj" />
           <figcaption>{profile.legalName}</figcaption>
         </figure>
         <div>
